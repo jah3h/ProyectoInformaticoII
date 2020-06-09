@@ -8,8 +8,10 @@
     
     <title>Hello, World!</title>
   </head>
-  <body>
-  
+  <body >
+ 
+      
+    <center>
     <table>
       <tr>
         <td> <input type="text" name="">
@@ -29,12 +31,7 @@
         </td>
       </tr>
     </table>
-
-      
-     
- 
- 
-
-   
+</center>
+  
   </body>
 </html>

@@ -1,33 +1,33 @@
 body{
 	background: #E5E5E5;
-	justify-content: center;
-	display: flex;font-family: Righteous;
+font-family: Righteous;
 }
 
 .login{
-	
+	text-align: center;
 }
 table{
 	position: absolute;
-	background: white;
-	top:40px;
+	
+	
 	text-align: center;
-	text-align: center;
+	
 	border-radius:8px;
-	margin: auto 0px;
-	width: 50%;
+	margin: 0 auto;
+	width: 300px;
 	height: 500px;
 
-}
-
-tr{
-	background:green;
 }
 
 td{
 	background: blue;
 }
 
-td input{
+td {
+	color:black;
+	background: red;
+}
+
+input{
 	background: red;
 }
