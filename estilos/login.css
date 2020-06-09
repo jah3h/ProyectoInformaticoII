@@ -1,0 +1,16 @@
+body{
+	background: #E5E5E5;
+	justify-content: center;
+	display: flex;
+}
+
+.login{
+	position: absolute;
+	background: white;
+	top:40px;
+	text-align: center;
+	
+	margin: auto 0px;
+	width: 50%;
+	height: 500px;
+}
