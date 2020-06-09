@@ -5,21 +5,21 @@
     <meta charset="utf-8">
 
 
-    
+    <link rel="stylesheet" type="text/css" href="estilos/login.css">
     <title>Hello, World!</title>
   </head>
   <body >
  
       
-    <center>
+   <div class="login">
     <table>
       <tr>
-        <td> <input type="text" name="">
+        <td> <input type="text" name="" placeholder="Ingresar Usuario">
 
         </td>
       </tr>
       <tr>
-        <td><input type="password" name=""></td>
+        <td><input type="password" name="" placeholder="Ingresar Contraseña"></td>
 
       </tr> 
       <tr>
@@ -31,7 +31,7 @@
         </td>
       </tr>
     </table>
-</center>
-  
+
+  </div>
   </body>
 </html>

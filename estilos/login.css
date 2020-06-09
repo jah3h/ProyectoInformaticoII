@@ -4,30 +4,42 @@ font-family: Righteous;
 }
 
 .login{
+	position: relative;
+	top:140px;
 	text-align: center;
+	width: 330px;
+	height: 430px;
+	background: white;
+	margin:0px auto;
+	border-radius:8px;
 }
 table{
-	position: absolute;
-	
-	
+	position: relative;
+	top:40px;
+	margin:0px auto;
 	text-align: center;
 	
-	border-radius:8px;
-	margin: 0 auto;
-	width: 300px;
-	height: 500px;
-
+	width:80%;
+	height: 200px;
+}
+td input{
+	outline: none;
+	background: #EFEFEF;
+	border:none;
+	width:90%;
+	height: 40px;
+	border-radius:4px;
+	padding:4px;
 }
 
-td{
-	background: blue;
+td a{
+	font-size: 12px;
+	color:#FE1100;
+
+}
+td input[type="submit"]{
+	background:#FE1100;
+	color:white;
+	font-size: 20px;
 }
 
-td {
-	color:black;
-	background: red;
-}
-
-input{
-	background: red;
-}
