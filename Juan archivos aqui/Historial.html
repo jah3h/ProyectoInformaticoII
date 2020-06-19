@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Font Awesome -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body>
+
+  <style>
+    .navegacion,
+    .boton1,
+    .page-footer,
+    .tabla-head {
+      background-color: red;
+
+    }
+    .menuAgregar{
+      background-color: red;;
+   color: white;
+   border:solid 1px white;
+    }
+    .form-control:focus {
+      border-color: #ff80ff;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);
+    }
+  </style>
+
+
+  <!--Barra de Navegacion -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark navegacion">
+    <a class="navbar-brand" href="#">Go Store</a>
+    <button type="button" class="btn menuAgregar " data-toggle="modal" data-target="#modalConfirmDelete"><i class="fas fa-plus fa-lg"></i></button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-user"></i> Log Out </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/Barra de navegacion -->
+  <br>
+  <br>
+
+
+  <main>
+  
+
+
+    <!--Modal: modalConfirmDelete-->
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+          <!--Header-->
+          <div class="modal-header d-flex justify-content-center">
+            <p class=" h4 heading">Agregar Item</p>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body">
+
+         
+              <form class="text-center " action="#!">
+                
+                <!-- Descripcion -->
+                <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Descripcion">
+                <div class="form-row mb-4">
+                  <div class="col">
+                    <!-- Cantidad -->
+                    <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Cantidad">
+                  </div>
+                  <div class="col">
+                    <!-- Precio -->
+                    <input type="number" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Precio">
+                  </div>
+                </div>
+                <!-- Sign in button -->
+                <div class="modal-footer flex-center">
+            
+                  <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Agregar</a>
+                </div>
+                <!-- Register -->
+              </form>
+         
+
+          </div>
+
+          <!--Footer-->
+         
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+  c
+   
+      </main>
+      <!-- Footer -->
+      <footer class="page-footer font-small  fixed-bottom">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="https://mdbootstrap.com/"> GO Store</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </body>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+
+    </html>

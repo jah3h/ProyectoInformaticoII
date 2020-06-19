@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Font Awesome -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body>
+
+  <style>
+    .navegacion,
+    .boton1,
+    .page-footer,
+    .tabla-head {
+      background-color: red;
+
+    }
+    .menuAgregar{
+      background-color: red;;
+   color: white;
+   border:solid 1px white;
+    }
+   
+
+  
+
+  </style>
+  
+<style>
+    /* Icon 1 */
+    
+    .animated-icon2,.animated-icon3{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    }
+    
+     .animated-icon2 span,.animated-icon3 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    }
+    
+    
+    
+    .animated-icon2 span ,.animated-icon3 span {
+    background: red;
+    }
+    
+    
+    
+    /* Icon 2*/
+    
+    .animated-icon2 span:nth-child(1) {
+    top: 0px;
+    }
+    
+    .animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
+    top: 10px;
+    }
+    
+    .animated-icon2 span:nth-child(4) {
+    top: 20px;
+    }
+    
+    .animated-icon2.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+    
+    .animated-icon2.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    
+    .animated-icon2.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+    
+    .animated-icon2.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+    
+    /* Icon 3*/
+    
+    .animated-icon3 span:nth-child(1) {
+    top: 0px;
+    }
+    
+    .animated-icon3 span:nth-child(2), .animated-icon2 span:nth-child(3) {
+    top: 10px;
+    }
+    
+    .animated-icon3 span:nth-child(4) {
+    top: 20px;
+    }
+    
+    .animated-icon3.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+    
+    .animated-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    
+    .animated-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+    
+    .animated-icon3.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+    
+    </style>
+    
+
+      <!--Barra de Navegacion -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark navegacion">
+    <a class="navbar-brand" href="#">Go Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i> Log Out </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+       </li>
+      </ul>
+    </div>
+  </nav>
+    
+  <!--/Barra de navegacion -->
+<br>
+<br>
+
+<div class="container">
+  <!--Navbar-->
+  <nav class="navbar navbar-dark   mb-4">
+  
+    <!-- Navbar brand -->
+    <h2><a class="navbar-brand red-text font-weight-bold" href="#">Listas Realizadas</a></h2>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon2 "><span></span><span></span><span></span><span></span></div>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link red-text" href="#">Lista PlazaVea </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link red-text" href="#">Lista Mercado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link red-text" href="#">Lista Pagos</a>
+        </li>
+      </ul>
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+ <!--Navbar-->
+ <nav class="navbar navbar-dark   mb-4">
+  
+    <!-- Navbar brand -->
+    <h2><a class="navbar-brand red-text font-weight-bold" href="#">Listas Programadas</a></h2>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent24"
+      aria-controls="navbarSupportedContent24" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon3 "><span></span><span></span><span></span><span></span></div>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent24">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item ">
+          <a class="nav-link red-text" href="#">Lista Mercadillo </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link red-text" href="#">Lista Doña Julia</a>
+        </li>
+     
+      </ul>
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+
+ <!--/.Boton de Nueva Lista-->
+
+ <a type="button" class="btn  btn-rounded boton1 text-white btn-block  " href="Historial.html"> <p class="h5">Nueva Lista</p> </a>
+ <!--/.Boton de Nueva Lista-->
+
+
+</div>
+
+
+
+</body>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+$('.second-button').on('click', function () {
+
+  $('.animated-icon2').toggleClass('open');
+});
+
+$('.third-button').on('click', function () {
+
+$('.animated-icon3').toggleClass('open');
+
+});
+
+
+});
+</script>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+</html>

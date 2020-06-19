@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Font Awesome -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body>
+
+  <style>
+    .navegacion,
+    .boton1,
+    .page-footer,
+    .tabla-head {
+      background-color: red;
+
+    }
+    .menuAgregar{
+      background-color: red;;
+   color: white;
+   border:solid 1px white;
+    }
+
+/* Todo el diseño de aqui hacia abajo es del checkbox del Historial*/
+    .content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+ 
+.content-input input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+.content-input{
+	position: relative;
+	margin-bottom: 30px;
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
+        el elemento <i> en este espacio*/
+	display: block;
+}
+ 
+/* Estas reglas se aplicarán a todos las elementos i 
+después de cualquier input*/
+.content-input input + i{
+       background: #f0f0f0;
+       border:2px solid rgba(0,0,0,0.2);
+       position: absolute; 
+       left: 0;
+       top: 0;
+}
+ 
+/* Estas reglas se aplicarán a todos los i despues 
+de un input de tipo checkbox*/
+.content-input input[type=checkbox ] + i{
+	width: 52px;
+	height: 30px;
+	border-radius: 15px;
+}
+/*
+Creamos el círculo que aparece encima de los checkbox
+con la etqieta before. Importante aunque no haya contenido
+debemos poner definir este valor.
+*/
+.content-input input[type=checkbox] + i:before{
+	content: ''; /* No hay contenido */
+	width: 26px;
+	height: 26px;
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+	-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+}
+
+
+.content-input input[type=checkbox]:checked + i:before{
+	left: 22px;
+	-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+}
+ 
+.content-input input[type=checkbox]:checked + i{
+ background: red;
+}
+.content-input input[type=checkbox] + i:after{
+	content: 'ON';
+	position: absolute;
+	font-size: 10px;
+	color: rgba(255,255,255,0.6);
+	top: 8px;
+	left: 4px;
+	opacity: 0 /* Ocultamos este elemento */;
+	transition: all 0.25s ease 0.25s;
+}
+ 
+/* Cuando esté checkeado cambiamos la opacidad a 1 y lo mostramos */
+.content-input input[type=checkbox]:checked + i:after{
+ opacity: 1;
+}
+  </style>
+
+
+  <!--Barra de Navegacion -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark navegacion">
+    <a class="navbar-brand" href="#">Go Store</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" >
+            <i class="fas fa-user"></i> Log Out </a>
+        
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/Barra de navegacion -->
+  <br>
+  <br>
+  <main>
+    <div class="container text-center" >
+      <!--/.Boton de Tabla Historial-->
+        <button type="button" class="btn menuAgregar " data-toggle="modal" data-target="#modalConfirmDelete">Agregar Historial</button>
+        <!--/.Boton de Tabla Historial-->
+
+<!--Modal: Tabla Historial-->
+ <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog modal-xl modal-notify modal-danger" role="document">
+   <!--Content-->
+   <div class="modal-content text-center">
+     <!--Header-->
+     <div class="modal-header d-flex justify-content-center">
+       <p class=" h4 heading">Agregar Item</p>
+     </div>
+
+     <!--Body-->
+     <div class="modal-body table-responsive">
+        <table class="table">
+            <thead class=" tabla-head white-text">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Add</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Huevos</td>
+                <td>2 kilos</td>
+                <td>6.50</td>
+                <td> <label class="content-input" >
+	                <input type="checkbox" name="agregar" value=""><i></i>
+                    </label> </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Aceite Primor</td>
+                <td>5 grandes</td>
+                <td>25.50</td>
+                <td> <label class="content-input" >
+	                <input type="checkbox" name="agregar" value=""><i></i>
+                    </label> </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Aceite Primor</td>
+                <td>3 chicos</td>
+                <td>9.00</td>
+                <td> <label class="content-input" >
+	            <input type="checkbox" name="agregar" value=""><i></i>
+                </label> </td>
+              </tr>
+            </tbody>
+          </table>
+
+     </div>
+
+     <!--Footer-->
+    
+   </div>
+   <!--/.Content-->
+ </div>
+</div>
+<!--Modal: Tabla Historial-->
+
+
+
+<hr>
+        <form class="text-center " action="#!">
+                    
+            <!-- Descripcion -->
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Descripcion">
+            <div class="form-row mb-4">
+              <div class="col">
+                <!-- Cantidad -->
+                <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Cantidad">
+              </div>
+              <div class="col">
+                <!-- Precio -->
+                <input type="number" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Precio">
+              </div>
+            </div>
+            <!-- Sign in button -->
+    
+        
+              <button type="button" class="btn  btn-danger waves-effect" >Agregar</button>
+       
+            <!-- Register -->
+          </form>
+     
+    </div>
+       <!--Tabla de nueva lista agregandose-->
+    <div class="table-responsive container-fluid">
+        <table class="table">
+          <thead class=" tabla-head white-text">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Quitar</th>
+              <th scope="col">Modificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Huevos</td>
+              <td>2 kilos</td>
+              <td>6.50</td>
+              <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-trash-alt"></i></button></td>
+              <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-pen"></i></button></td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Huevos</td>
+                <td>2 kilos</td>
+                <td>6.50</td>
+                <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-trash-alt"></i></button></td>
+                <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-pen"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Huevos</td>
+                <td>2 kilos</td>
+                <td>6.50</td>
+                <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-trash-alt"></i></button></td>
+                <td> <button type="button" class="btn btn-danger btn-rounded"><i class="fas fa-pen"></i></button></td>
+              </tr>
+       
+          </tbody>
+        </table>
+  
+      </div>
+<!--Tabla de nueva lista agregandose-->
+<br>
+<div>
+<!--Crear  Nueva Lista-->
+<button type="button" class="btn  btn-rounded boton1 text-white btn-block  " > Agregar de Historial </button>
+      <!--Crear Nueva Lista-->
+</div>
+
+</main>
+<!-- Footer -->
+<footer class="page-footer font-small  fixed-bottom">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> GO Store</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</body>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+
+</html>
