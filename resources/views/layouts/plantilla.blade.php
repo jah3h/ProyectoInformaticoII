@@ -10,7 +10,10 @@
 </head>
 
 <body>
-  @include('partials.splash')
+  @guest
+    @include('partials.splash')    
+  @endguest
+  
   @include('partials.navbar')
   
     <div class="container ">
