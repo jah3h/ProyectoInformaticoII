@@ -22,5 +22,5 @@ Auth::routes();
 
 Route::get('/lista', function () {
     return view('lista');
-});
+})->middleware('auth');
 //Route::get('/home', 'HomeController@index')->name('home');
