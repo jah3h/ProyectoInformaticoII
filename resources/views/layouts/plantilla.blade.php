@@ -11,7 +11,7 @@
 
 <body>
   @guest
-    @include('partials.splash')    
+   <!--@include('partials.splash')  -->
   @endguest
   
   @include('partials.navbar')
