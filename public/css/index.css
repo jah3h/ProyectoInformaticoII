@@ -6,10 +6,14 @@
 
 }
 
+body{
+  height: 500px;
+}
+/*
 .boton1 {
   border-radius: 20px;
-}
-
+}*/
+/*
 .splashlogo {
   width: 100px;
   height: auto;
@@ -29,8 +33,8 @@
    color: white;
    border:solid 1px white;
     }
-
-/* Ni idea */
+*/
+/* Ni idea 
 .animated-icon2,.animated-icon3{
   width: 30px;
   height: 20px;
@@ -151,4 +155,4 @@
   top: 11px;
   width: 0%;
   left: 50%;
-  }   
+  }   */
