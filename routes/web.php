@@ -15,12 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('principal');
-});
+})->middleware('guest');
 
 
 Auth::routes();
 
-Route::get('/lista', function () {
+/*Route::get('/lista', function () {
     return view('lista');
-})->middleware('auth');
+})->middleware('auth');*/
 //Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('listaCompra', 'ListaComprasController')->middleware('auth');
