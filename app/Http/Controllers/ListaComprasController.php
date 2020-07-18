@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ListaCompras;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ListaComprasController extends Controller
 {
@@ -14,7 +16,9 @@ class ListaComprasController extends Controller
      */
     public function index()
     {
-        //
+        $listaCompras=ListaCompras::all();
+
+        return view('listaCompras.index',['listaCompras'=>$listaCompras]);
     }
 
     /**
@@ -24,7 +28,7 @@ class ListaComprasController extends Controller
      */
     public function create()
     {
-        //
+        return view('listaCompras.create');
     }
 
     /**
@@ -35,7 +39,16 @@ class ListaComprasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       /* $columns = Schema::getColumnListing('lista_compras'); 
+        return dd($columns);*/
+        
+        $listaCompra = new ListaCompras();
+
+        $listaCompra->nombre= $request->input('nombre');
+        $listaCompra->user_id= auth()->user()->id;
+        $listaCompra->save();
+
+        return redirect()->route('listaCompra.index');
     }
 
     /**
@@ -44,7 +57,7 @@ class ListaComprasController extends Controller
      * @param  \App\ListaCompras  $listaCompras
      * @return \Illuminate\Http\Response
      */
-    public function show(ListaCompras $listaCompras)
+    public function show(ListaCompras $listaCompra)
     {
         //
     }
@@ -57,7 +70,8 @@ class ListaComprasController extends Controller
      */
     public function edit(ListaCompras $listaCompras)
     {
-        //
+        //return view('listaCompras.editar');
+        return '->'.$listaCompras->Nombre;
     }
 
     /**
@@ -69,7 +83,7 @@ class ListaComprasController extends Controller
      */
     public function update(Request $request, ListaCompras $listaCompras)
     {
-        //
+        
     }
 
     /**
