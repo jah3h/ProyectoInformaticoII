@@ -16,7 +16,7 @@ class ListaComprasController extends Controller
      */
     public function index()
     {
-        $listaCompras=ListaCompras::paginate(5);
+        $listaCompras=ListaCompras::paginate(4);
 
         return view('listaCompras.index',['listaCompras'=>$listaCompras]);
     }
@@ -52,7 +52,7 @@ class ListaComprasController extends Controller
         $listaCompra->user_id= auth()->user()->id;
         $listaCompra->save();
 
-        return redirect()->route('listaCompra.index');
+        return redirect()->route('listaCompra.index')->with('success','Lista creada correctamente');;
     }
 
     /**
@@ -72,11 +72,10 @@ class ListaComprasController extends Controller
      * @param  \App\ListaCompras  $listaCompras
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListaCompras $listaCompras)
+    public function edit($id)
     {
-        
+        $listaCompras = ListaCompras::find($id);    
         return view('listaCompras.edit',compact('listaCompras'));
-       
     }
 
     /**
@@ -86,15 +85,16 @@ class ListaComprasController extends Controller
      * @param  \App\ListaCompras  $listaCompras
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListaCompras $listaCompras)
+    public function update(Request $request, $id)
     {
-        $request->validate([
+        $updateData=$request->validate([
             'nombre' => 'required',
         ]);
 
-        $listaCompras->save();
+        ListaCompras::whereId($id)->update($updateData);
 
-        return redirect()->route('listaCompra.index ')->with('success','Post updated successfully');
+
+        return redirect()->route('listaCompra.index')->with('success','Lista actualizada correctamente');
     }
 
     /**
@@ -103,8 +103,11 @@ class ListaComprasController extends Controller
      * @param  \App\ListaCompras  $listaCompras
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListaCompras $listaCompras)
+    public function destroy($id)
     {
-        //
+        $listaCompras = ListaCompras::find($id);
+        $listaCompras->delete();
+        //return "HOla";
+        return redirect()->route('listaCompra.index')->with('success','Lista eliminada correctamente');
     }
 }

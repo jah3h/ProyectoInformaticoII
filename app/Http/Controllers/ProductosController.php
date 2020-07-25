@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Productos;
+use App\ListaCompras;
 use Illuminate\Http\Request;
+use Producto;
 
 class ProductosController extends Controller
 {
@@ -14,7 +16,10 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+       
+       $productos=Productos::paginate(4);
+       
+        return view('productos.index',['productos'=>$productos]);
     }
 
     /**
@@ -22,9 +27,9 @@ class ProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(ListaCompras $listaCompra)
     {
-        //
+        return view('productos.create', $listaCompra);
     }
 
     /**

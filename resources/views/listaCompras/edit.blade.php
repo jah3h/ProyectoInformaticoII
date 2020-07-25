@@ -1,25 +1,32 @@
 @extends('layouts.plantilla')
 
 @section('content')
+<br>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-    {{$listaCompras->id}}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Nuevo Lista de Compra</h1>
 
-    <form action="" method="POST">
-        @csrf
-
-        @method('PUT')
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Title:</strong>
-                    <input type="text" name="nombre" value="{{ $listaCompras->nombre }}" class="form-control" placeholder="Nombre">
-                </div>
+        <form action="{{route('listaCompra.update',$listaCompras->id)}}" method="post">
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+                <label for="content">Nombre de la Lista</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{$listaCompras->nombre}}">
             </div>
+            
+            <button type="submit" class="btn btn-danger">Guardar</button>
+        </form>
+    </div>
+</div>
 
-       
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
 @endsection
