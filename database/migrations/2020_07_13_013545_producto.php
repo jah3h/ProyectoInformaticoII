@@ -19,6 +19,7 @@ class Producto extends Migration
             $table->integer('cantidad');
             $table->unsignedBigInteger('lista_compra_id');
             //table->unsignedBigInteger('unidad_medida_id');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
             
             //$table->foreign('unidad_medida_id')->references('id')->on('unidad_medida');

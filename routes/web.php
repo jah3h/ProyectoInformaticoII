@@ -27,3 +27,5 @@ Auth::routes();
 
 
 Route::resource('listaCompra', 'ListaComprasController')->middleware('auth');
+
+Route::resource('productos', 'ProductosController')->middleware('auth');

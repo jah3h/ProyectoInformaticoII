@@ -2,16 +2,22 @@
 
 @section('content')
 
+<h1 class='display-1'>FALTA!!!!</h1>
+
 <br />
 <div class="card">
   <div class="card-body">
-    <a class="btn btn-primary" href="{{route('listaCompra.create')}}" role="button">Nueva Lista</a>
+  <h1 class="display-4">Lista de Items</h1>  <a class="btn btn-primary" href="{{route('productos.create')}}" role="button">Agregar Item</a>
   </div>
 </div>
 
+
+
 @include('partials.alerts')
-<br>
-@if ($listaCompras->count()==0)
+
+
+@if ($productos->count()==0)
+<br />
 <div class="card">
   <div class="card-body">
     La Lista esta Vacia
@@ -20,8 +26,7 @@
 
 @else
 
-<div class="card" style="margin-top: 10px">
-  
+<!--<div class="card" style="margin-top: 30px">
   <div class="card-body">
     <table class="table table-striped">
       <thead>
@@ -38,7 +43,7 @@
         
         <tr>
           <td scope="row">{{$lista->id}}</td>
-        <td><a href="{{route('productos.index')}}">{{$lista->nombre}}</a></td>
+          <td>{{$lista->nombre}}</td>
           <td>
             
             <form action="{{route('listaCompra.destroy',$lista->id)}}" method="POST">
@@ -59,6 +64,6 @@
       {{$listaCompras->links()}}
     </div>
   </div>
-</div>
+</div>-->
 @endif
 @endsection
