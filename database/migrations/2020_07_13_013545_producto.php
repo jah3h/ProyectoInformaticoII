@@ -17,10 +17,14 @@ class Producto extends Migration
             $table->id();
             $table->string('nombre');
             $table->integer('cantidad');
+            $table->unsignedBigInteger('lista_compra_id');
             //table->unsignedBigInteger('unidad_medida_id');
             $table->timestamps();
+            
             //$table->foreign('unidad_medida_id')->references('id')->on('unidad_medida');
         });
+
+        
     }
 
     /**

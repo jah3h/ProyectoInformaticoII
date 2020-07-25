@@ -1,7 +1,7 @@
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark navegacion">
     <!-- BRAND -->
     <a class="navbar-brand mb-0 h1" href="/">
-        <img src="{{URL::to('images/isotipo_carrito.png')}}" width="30" height="30" class=" align-top" alt="">
+        <img src="{{URL::to('images/isotipo_carrito.png')}}" width="30px" class=" align-top" alt="">
         Go Store</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
         aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
