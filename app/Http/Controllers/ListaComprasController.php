@@ -16,7 +16,7 @@ class ListaComprasController extends Controller
      */
     public function index()
     {
-        $listaCompras=ListaCompras::all();
+        $listaCompras=ListaCompras::paginate(5);
 
         return view('listaCompras.index',['listaCompras'=>$listaCompras]);
     }
@@ -41,7 +41,11 @@ class ListaComprasController extends Controller
     {
        /* $columns = Schema::getColumnListing('lista_compras'); 
         return dd($columns);*/
-        
+
+        $validatedData = $request->validate([
+            'nombre' => ['required']
+        ]);
+
         $listaCompra = new ListaCompras();
 
         $listaCompra->nombre= $request->input('nombre');
@@ -70,8 +74,9 @@ class ListaComprasController extends Controller
      */
     public function edit(ListaCompras $listaCompras)
     {
-        //return view('listaCompras.editar');
-        return '->'.$listaCompras->Nombre;
+        
+        return view('listaCompras.edit',compact('listaCompras'));
+       
     }
 
     /**
@@ -83,7 +88,13 @@ class ListaComprasController extends Controller
      */
     public function update(Request $request, ListaCompras $listaCompras)
     {
-        
+        $request->validate([
+            'nombre' => 'required',
+        ]);
+
+        $listaCompras->save();
+
+        return redirect()->route('listaCompra.index ')->with('success','Post updated successfully');
     }
 
     /**
