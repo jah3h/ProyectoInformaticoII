@@ -17,7 +17,7 @@ class Producto extends Migration
             $table->id();
             $table->string('nombre');
             $table->integer('cantidad');
-            //$table->string('unidad_medida_cod');
+            $table->string('unidad_medida_cod');
             $table->decimal('precio');
             $table->unsignedBigInteger('lista_compra_id');
             $table->boolean('estado')->default(0);

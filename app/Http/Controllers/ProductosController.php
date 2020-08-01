@@ -30,7 +30,19 @@ class ProductosController extends Controller
      */
     public function create(ListaCompras $listaCompra)
     {
-        return view('productos.create',['listaCompra' =>$listaCompra]);
+        $unidad = [
+            "mm" => "mm",
+            "cm" => "cm",
+            "m" => "m",
+            "pulgada" => "pulgada",
+            "mg" => "mg",
+            "g" => "g",
+            "kg" => "kg",
+            "l" => "l",
+            "unidad" => "unidad",
+            "paquete" => "paquete"
+        ];
+        return view('productos.create',['listaCompra' =>$listaCompra],compact('unidad'));
     }
 
     /**
@@ -46,7 +58,8 @@ class ProductosController extends Controller
         $data=$request->validate([
             'nombre'=>'required',
             'cantidad'=>'required',
-            'precio'=>'required'
+            'precio'=>'required',
+            'unidad_medida_cod'=>'required'
             
         ]);
 
@@ -78,7 +91,19 @@ class ProductosController extends Controller
      */
     public function edit(Productos $producto)
     {
-        return view('productos.edit',compact('producto'));
+        $unidad = [
+            "mm" => "mm",
+            "cm" => "cm",
+            "m" => "m",
+            "pulgada" => "pulgada",
+            "mg" => "mg",
+            "g" => "g",
+            "kg" => "kg",
+            "l" => "l",
+            "unidad" => "unidad",
+            "paquete" => "paquete"
+        ];
+        return view('productos.edit',compact('producto'),compact('unidad'));
     }
 
     /**
@@ -95,7 +120,8 @@ class ProductosController extends Controller
         $updateData=$request->validate([
             'nombre'=>'required',
             'cantidad'=>'required',
-            'precio'=>'required'
+            'precio'=>'required',
+            'unidad_medida_cod'=>'required'
         ]);
 
 

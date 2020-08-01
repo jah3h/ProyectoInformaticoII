@@ -6,7 +6,7 @@
 
 <div class="card ">
     <div class="card-body">
-        <h1 class="card-title">Nuevo Item</h1>
+        <h1 class="card-title">Modificar Item</h1>
 
         <form action="{{route('productos.update',$producto)}}" method="post">
             @csrf
@@ -28,12 +28,14 @@
             </div>
 
             <div class="form-row">
-               <!-- <div class="col-md-3 mb-3">
-                    <label for="content">Unidad de Medida</label>
+               <div class="col-md-3 mb-3">
+                   <label for="content">Unidad de Medida</label>
                     <select class="custom-select" id="unidad_medida_cod" name="unidad_medida_cod">
-                        @include('data.unidadMedida');
+                        @foreach ($unidad as $item)
+                         <option value="{{$item}}" {{$item==$producto->unidad_medida_cod?'selected':''}} >{{$item}}</option>
+                        @endforeach
                     </select>
-                </div>-->
+                </div>
                 <div class="col-md-3 mb-3">
                     <label for="content">Cantidad</label>
                     <input type="number" class="form-control" min="1" id="cantidad" name="cantidad" value="{{$producto->cantidad}}">

@@ -6,7 +6,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
-            <!--<th scope="col">Unidad de Medida</th>-->
+            <th scope="col">Unidad de Medida</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
             <th scope="col">Total</th>
@@ -18,7 +18,7 @@
           <tr class="animate__animated animate__fadeIn">
             <th class="align-middle" scope="row">{{$loop->index+1}}</th>
             <td class="align-middle">{{$prod->nombre}}</td>
-            <!--<td class="align-middle">{{$prod->unidad_medida_cod}}</td>-->
+            <td class="align-middle">{{$prod->unidad_medida_cod}}</td>
             <td class="align-middle">{{$prod->cantidad}}</td>
             <td class="align-middle">{{$prod->precio}}</td>
             <td class="align-middle">{{$prod->precio*$prod->cantidad}}</td>
