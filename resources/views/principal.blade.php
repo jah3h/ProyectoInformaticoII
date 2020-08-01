@@ -6,7 +6,7 @@
   <div class="col-md-6">
     <img src="{{URL::to('images/isotipo.png')}}" style="height:400px" alt="">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 animate__animated animate__fadeIn">
     <h1 class="display-1">
       Bienvenido
     </h1>
