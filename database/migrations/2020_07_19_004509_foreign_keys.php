@@ -18,7 +18,8 @@ class ForeignKeys extends Migration
         });
 
         Schema::table('productos', function (Blueprint $table)  {
-            $table->foreign('lista_compra_id')->references('id')->on('lista_compras');
+            $table->foreign('lista_compra_id')->references('id')->on('lista_compras')->onDelete('cascade');
+            //$table->foreign('unidad_medida_id')->references('id')->on('unidad_medida');
         });
     }
 

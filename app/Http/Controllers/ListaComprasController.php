@@ -16,7 +16,7 @@ class ListaComprasController extends Controller
      */
     public function index()
     {
-        $listaCompras=ListaCompras::paginate(4);
+        $listaCompras=ListaCompras::paginate(3);
 
         return view('listaCompras.index',['listaCompras'=>$listaCompras]);
     }

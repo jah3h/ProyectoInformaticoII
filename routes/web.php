@@ -17,15 +17,10 @@ Route::get('/', function () {
     return view('principal');
 })->middleware('guest');
 
+Route::resource('listaCompra', 'ListaComprasController')->middleware('auth');
+Route::resource('listaCompra.productos', 'ProductosController')->shallow()->middleware('auth');
 
 Auth::routes();
 
-/*Route::get('/lista', function () {
-    return view('lista');
-})->middleware('auth');*/
-//Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('listaCompra', 'ListaComprasController')->middleware('auth');
-
-Route::resource('productos', 'ProductosController')->middleware('auth');

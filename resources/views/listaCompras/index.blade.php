@@ -22,8 +22,8 @@
 
 <div class="card" style="margin-top: 10px">
   
-  <div class="card-body">
-    <table class="table table-striped">
+  <div class="card-body ">
+    <table class="table table-striped table-sm">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -31,14 +31,13 @@
           <th scope="col" colspan="2">Opciones</th>
         </tr>
       </thead>
+
       <tbody>
-      
-        
         @foreach ($listaCompras as $lista)
         
         <tr>
           <td scope="row">{{$lista->id}}</td>
-        <td><a href="{{route('productos.index')}}">{{$lista->nombre}}</a></td>
+        <td><a href="{{route('listaCompra.productos.index',$lista)}}">{{$lista->nombre}}</a></td>
           <td>
             
             <form action="{{route('listaCompra.destroy',$lista->id)}}" method="POST">
@@ -51,10 +50,10 @@
           </td>
         </tr>
         @endforeach
-
-
       </tbody>
+
     </table>
+    
     <div class="d-flex justify-content-center">
       {{$listaCompras->links()}}
     </div>

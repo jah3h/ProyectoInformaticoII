@@ -20,8 +20,9 @@
       @yield('content')
     </div>
 
+  
   @include('partials.default_js')
-  <script src="{{URL::to('js/index.js')}}"></script>
+  
 </body>
 
 </html>
