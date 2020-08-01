@@ -44,11 +44,11 @@
             @csrf
             
             <div class="form-row">
-                <div class="col-md-2 mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                <div class="col-1 mb-1">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
-                <div class="col-md-1 mb-1">
-                    <a class="btn btn-danger btn-lg"  href="{{ url()->previous()}}" role="button">Atras</a>
+                <div class="col-1 mb-1">
+                    <a class="btn btn-danger    "  href="{{ url()->previous()}}" role="button">Atras</a>
                 </div>
                
             </div>
