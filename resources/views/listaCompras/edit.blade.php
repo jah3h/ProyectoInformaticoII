@@ -13,9 +13,11 @@
 @endif
 
 <div class="card">
+    <div class="card-header">
+        <img src="{{URL::to('images/pngwing.png')}}" width="100px">
+        <h1 class="card-title">Modificar Lista de Compra</h1>
+    </div>
     <div class="card-body">
-        <h1 class="card-title">Nuevo Lista de Compra</h1>
-
         <form action="{{route('listaCompra.update',$listaCompras->id)}}" method="post">
             @csrf
             @method('PUT')
@@ -24,7 +26,8 @@
             <input type="text" class="form-control" id="nombre" name="nombre" value="{{$listaCompras->nombre}}">
             </div>
             
-            <button type="submit" class="btn btn-danger">Guardar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-danger" href="{{ url()->previous()}}" role="button">Atras</a>
         </form>
     </div>
 </div>

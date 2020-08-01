@@ -5,8 +5,13 @@
 @include('partials.alerts')
 
 <div class="card ">
-    <div class="card-body">
+    <div class="card-header">
+        <!--<img src="{{URL::to('images/pngwing.png')}}" width="100px">-->
         <h1 class="card-title">Nuevo Item</h1>
+    </div>
+
+    <div class="card-body">
+        
 
         <form action="{{route('listaCompra.productos.store',$listaCompra)}}" method="post">
             <div class="form-row">

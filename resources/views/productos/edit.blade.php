@@ -5,9 +5,11 @@
 @include('partials.alerts')
 
 <div class="card ">
-    <div class="card-body">
+    <div class="card-header">
+        <!--<img src="{{URL::to('images/pngwing.png')}}" width="100px">-->
         <h1 class="card-title">Modificar Item</h1>
-
+    </div>
+    <div class="card-body">
         <form action="{{route('productos.update',$producto)}}" method="post">
             @csrf
             @method('PUT')
