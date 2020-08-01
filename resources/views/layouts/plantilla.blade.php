@@ -7,6 +7,7 @@
   <title>GoStore</title>
   @include('partials.default_css')
   <link rel="stylesheet" href="{{URL::to('css/index.css')}}">
+  <link rel="icon" href="{{URL::to('images/isotipo.png')}}">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
   
   @include('partials.navbar')
   
-    <div class="container ">
+    <div class="container-xl ">
       @yield('content')
     </div>
 

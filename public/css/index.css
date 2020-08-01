@@ -1,9 +1,18 @@
-.navegacion,
-.boton1,
-.page-footer,
-.tabla-head {
-  background-color: gray;
+html, body,.container-xl,.heightfull {
+  min-height: 95%;
+  height: 95%;
+  
+}
 
+
+.widthfull{
+  min-width: 100%;
+  width: 100%;
+}
+.navegacion,
+.nav   {
+  background-color: red;
+  
 }
 
 body{

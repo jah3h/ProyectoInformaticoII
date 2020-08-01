@@ -2,9 +2,14 @@
 
 
 @section('content')
-     <div class="" style="height: 100%, width: 100%">
-        <h1 class="display-1">
-          Bienvenido
-        </h1>
-     </div>
+<div class="row align-items-center heightfull widthfull">
+  <div class="col-md-6">
+    <img src="{{URL::to('images/isotipo.png')}}" style="height:400px" alt="">
+  </div>
+  <div class="col-md-6">
+    <h1 class="display-1">
+      Bienvenido
+    </h1>
+  </div>
+</div>
 @endsection
