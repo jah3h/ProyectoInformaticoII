@@ -23,6 +23,10 @@
 <div class="card" style="margin-top: 10px">
 
   <div class="card-body ">
+    <div class="alert alert-info" role="alert">
+      (**) Click en el nombre de la lista para ver los items.
+    </div>
+    <br>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
