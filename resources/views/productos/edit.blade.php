@@ -6,7 +6,7 @@
 
 <div class="card ">
     <div class="card-header">
-        <!--<img src="{{URL::to('images/pngwing.png')}}" width="100px">-->
+        <img src="{{URL::to('images/cleaning.png')}}" width="100px">
         <h1 class="card-title">Modificar Item</h1>
     </div>
     <div class="card-body">
