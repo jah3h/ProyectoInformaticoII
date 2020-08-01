@@ -6,7 +6,7 @@
   <option value="mg">mg</option>
   <option value="g">g</option>
   <option value="kg">kg</option>
-  <option value="ml">ml</option>
+  <option value="kg">ml</option>
   <option value="l">l</option>
   <option value="unidad">unidad</option>
   <option value="paquete">paquete</option>
